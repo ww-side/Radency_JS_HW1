@@ -63,7 +63,7 @@ export function openEditModal(item) {
     editedItem.content = editContentInput.value;
     const dateValue = new Date(editDatesInput.value);
     const formattedDate = dateValue.toISOString().slice(0, 10);
-    if (!editedItem.dates.includes(formattedDate)) {
+    if (formattedDate !== editedItem.dates[editedItem.dates.length - 1]) {
       editedItem.dates.push(formattedDate);
     }
     closeEditModal();
