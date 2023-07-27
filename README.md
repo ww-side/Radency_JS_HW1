@@ -45,13 +45,13 @@ https://exploringjs.com/impatient-js      https://developer.mozilla.org/ru/docs/
 
 While working on your task you should utilize all of the following:
 
-1) JavaScript
+1. JavaScript
 - Import / export
 - Array methods: map, reduce, filter (some of them)
 - Array spread operator
 - Regular expressions
 - Try / catch 
-2) DOM API
+2. DOM API
 - document.querySelector
 - document.addEventListener
 
