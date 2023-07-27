@@ -27,6 +27,9 @@ export function createTable(
     row.appendChild(contentCell);
 
     const datesCell = document.createElement('td');
+
+    if (item.dates.length === 0) item.dates.push(formatDateToISO(item.created));
+
     if (item.dates.length > 0) {
       datesCell.textContent = `${item.dates.join(', ')}`;
     } else {
