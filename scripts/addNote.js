@@ -1,11 +1,12 @@
 import { data } from './arrays.js';
 import { displayData } from './notesTable.js';
 import { displayNoteCategories } from './countNotesTable.js';
+import { formatDateToISO } from './editNote.js';
 
 export function openAddTaskModal() {
   const addTaskModal = document.getElementById('addTaskModal');
   const taskTitleInput = document.getElementById('taskTitle');
-  const taskCreatedInput = document.getElementById('taskCreated');
+  const taskCreatedInput = document.getElementById('taskDate');
   const taskCategoryInput = document.getElementById('taskCategory');
   const taskContentInput = document.getElementById('taskContent');
 
@@ -34,17 +35,17 @@ export function generateUniqueId() {
 
 export function addNewTask() {
   const taskTitleInput = document.getElementById('taskTitle');
-  const taskCreatedInput = document.getElementById('taskCreated');
+  const taskCreatedInput = document.getElementById('taskDate');
   const taskCategoryInput = document.getElementById('taskCategory');
   const taskContentInput = document.getElementById('taskContent');
 
   const newTask = {
     id: generateUniqueId(),
     name: taskTitleInput.value,
-    created: new Date(taskCreatedInput.value),
+    created: new Date(),
     category: taskCategoryInput.value,
     content: taskContentInput.value,
-    dates: [],
+    dates: [formatDateToISO(new Date(taskCreatedInput.value))],
   };
 
   data.push(newTask);
